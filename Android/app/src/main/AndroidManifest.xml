@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bratsticker">
+
+    <!-- 🔥 WAJIB ANDROID 11+ -->
+    <queries>
+        <package android:name="com.whatsapp" />
+        <package android:name="com.whatsapp.w4b" />
+    </queries>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Brat Sticker Generator"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- MAIN -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LIST PACK -->
+        <activity
+            android:name=".StickerPackListActivity"
+            android:exported="true" />
+
+        <!-- DETAIL PACK -->
+        <activity
+            android:name=".StickerPackDetailsActivity"
+            android:exported="true" />
+
+        <!-- INFO -->
+        <activity
+            android:name=".StickerPackInfoActivity"
+            android:exported="false" />
+
+        <!-- 🔥 STICKER CONTENT PROVIDER - DIPERBAIKI -->
+        <provider
+            android:name=".StickerContentProvider"
+            android:authorities="com.example.bratsticker.stickercontentprovider"
+            android:permission="com.whatsapp.sticker.READ"
+            android:exported="true"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="com.whatsapp.sticker.provider"
+                android:value="true" />
+
+        </provider>
+
+    </application>
+</manifest>

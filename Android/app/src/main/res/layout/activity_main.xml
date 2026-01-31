@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <!-- Judul App -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brat Sticker Generator"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="48dp" />
+
+    <!-- Input Teks -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:hintTextColor="#666666"
+        app:boxStrokeColor="#FF5722"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan teks (contoh: Elon)"
+            android:inputType="text"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Tombol Generate -->
+    <Button
+        android:id="@+id/btn_generate"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="GENERATE STIKER"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#FF5722"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="12dp" />
+
+    <!-- 🔥 TAMBAHAN (WAJIB UNTUK JAVA) -->
+
+    <!-- Loading -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:visibility="gone" />
+
+    <!-- Preview Sticker -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_preview"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        android:visibility="gone"
+        android:overScrollMode="never" />
+
+    <!-- Tombol Add ke WhatsApp -->
+    <Button
+        android:id="@+id/btn_add_to_whatsapp"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:text="TAMBAHKAN KE WHATSAPP"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#25D366"
+        android:visibility="gone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dev by Defriansyah"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="20px" />
+
+</LinearLayout>
